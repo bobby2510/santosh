@@ -109,13 +109,13 @@ sport_foot.addEventListener('click',()=>
 })
 sport_basket.addEventListener('click',()=>
 {
-//     sp_new.style.display="none"
-//     fp = document.querySelector('#secondary_first_panel')
-//     fp.style.display="block"
-//     sd= get_sd_value(2)
-//     sport_type(2,-1)
-    raiseError('Currently Basketball is still under developement!')
-    return;
+    sp_new.style.display="none"
+    fp = document.querySelector('#secondary_first_panel')
+    fp.style.display="block"
+    sd= get_sd_value(2)
+    sport_type(2,-1)
+//     raiseError('Currently Basketball is still under developement!')
+//     return;
 })
 sport_kabaddi.addEventListener('click',()=>
 {
