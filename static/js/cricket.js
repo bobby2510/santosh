@@ -13,8 +13,7 @@ let authenticate = function()
         let temp_sub = parseInt(localStorage.getItem('date'))
        // console.log(temp)
        // console.log(temp_sub)
-        if(temp!=temp_sub)
-        {
+        
            // console.log('here')
             store_teams()
             if(localStorage.getItem('football')==null)
@@ -28,7 +27,7 @@ let authenticate = function()
                  localStorage.setItem('basketball',JSON.stringify(b_data))
             }                                       
             localStorage.setItem('date',temp)
-        }
+        
     }
     else
     {
