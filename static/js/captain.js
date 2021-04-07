@@ -90,8 +90,11 @@ let team_list=sd.req_data[series_index].teams_list
         span_role.textContent=role_value[player.player_role]
         span_credits = document.createElement('span')
         span_credits.textContent=player.player_credits
+        span_percentage = document.createElement('span')
+        span_percentage.textContent=`${player.player_percentage}%`
         inner_div2.classList.add('d-flex','justify-content-between')
         inner_div2.appendChild(span_role)
+        inner_div2.appendChild(span_percentage)
         inner_div2.appendChild(span_credits)
         inner_div1.appendChild(span_index)
         inner_div1.appendChild(span_name)
@@ -121,8 +124,11 @@ let team_list=sd.req_data[series_index].teams_list
         span_role.textContent=role_value[player.player_role]
         span_credits = document.createElement('span')
         span_credits.textContent=player.player_credits
+        span_percentage = document.createElement('span')
+        span_percentage.textContent=`${player.player_percentage}%`
         inner_div2.classList.add('d-flex','justify-content-between')
         inner_div2.appendChild(span_role)
+        inner_div2.appendChild(span_percentage)
         inner_div2.appendChild(span_credits)
         inner_div1.appendChild(span_name)
         inner_div1.appendChild(span_index)
