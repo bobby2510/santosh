@@ -265,11 +265,15 @@ submit_players.addEventListener('click',()=>
                     {
                         fsp = document.querySelector('#first_selection_percentage')
                         ssp = document.querySelector('#second_selection_percentage')
+                        tsp = document.querySelector('#third_selection_percentage')
                         first_value = Number(fsp.value)
                         second_value = Number(ssp.value)
+                        third_value = Number(tsp.value)
                         console.log(first_value,second_value)
                         if(first_value <0 || first_value > 100){raiseError('Invalid Input!'); return}
                         if(second_value<1 || second_value>11) {raiseError('Invalid Input!'); return}
+                        if(third_value<1 || third_value>11) {raiseError('Invalid Input!'); return}
+                        if(third_value < second_value) {raiseError('Invalid Input!'); return}
                         selection_percentage.style.display="none"
                         ts = document.getElementById('team_side')
                         ts.style.display="block"
@@ -370,7 +374,7 @@ submit_players.addEventListener('click',()=>
                                 cr.style.display="none"
                                 console.log(selected_tsd)
                                 console.log(first_value,second_value)
-                                team_generator(index_one,index_two,team1,team2,mn,csv,cev,fixed_team_one_players,fixed_team_two_players,captain_team_one_players,captain_team_two_players,vice_captain_team_one_players,vice_captain_team_two_players,selected_tsd,series_index,mode,sport_id,fantasy,first_value,second_value)
+                                team_generator(index_one,index_two,team1,team2,mn,csv,cev,fixed_team_one_players,fixed_team_two_players,captain_team_one_players,captain_team_two_players,vice_captain_team_one_players,vice_captain_team_two_players,selected_tsd,series_index,mode,sport_id,fantasy,first_value,second_value,third_value)
                             })
                         })
                         })
