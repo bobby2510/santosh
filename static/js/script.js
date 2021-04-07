@@ -230,10 +230,13 @@ let displayTeams = function(team1_data,team2_data,team1,team2,mn,series_index,mo
         span_role = document.createElement('span')
         span_role.setAttribute('id','player_role')
         span_role.textContent=role_value[player.player_role]
+        span_percentage = document.createElement('span')
+        span_percentage.textContent=`${player.player_percentage}%`
         span_credits = document.createElement('span')
         span_credits.textContent=player.player_credits
         inner_div2.classList.add('d-flex','justify-content-between')
         inner_div2.appendChild(span_role)
+        inner_div2.appendChild(span_percentage)
         inner_div2.appendChild(span_credits)
         inner_div1.appendChild(span_name)
         inner_div1.appendChild(inner_div2)
@@ -259,7 +262,10 @@ let displayTeams = function(team1_data,team2_data,team1,team2,mn,series_index,mo
         span_credits = document.createElement('span')
         span_credits.textContent=player.player_credits
         inner_div2.classList.add('d-flex','justify-content-between')
+        span_percentage = document.createElement('span')
+        span_percentage.textContent=`${player.player_percentage}%`
         inner_div2.appendChild(span_role)
+        inner_div2.appendChild(span_percentage)
         inner_div2.appendChild(span_credits)
         inner_div1.appendChild(span_name)
         inner_div1.appendChild(inner_div2)
