@@ -278,7 +278,7 @@ ctc.addEventListener('click',()=>
     nt =  Number(document.querySelector('#number_teams').value)
     if(nt<1 || nt>2000){raiseError('Numbers of teams should be 1 - 2000 range'); return}
 
-    team_generator_helper_two([[],wk,bat,al,bowl],[[],[],[],[],[]],req_comb,0,1,nt,1,93,100,team_one_players,team_two_players,team_one_players,team_two_players,[0,0,0,0,0],[0,1,2,3],1,1,0,-1,-1)
+    team_generator_helper_two([[],wk,bat,al,bowl],[[],[],[],[],[]],req_comb,0,1,nt,1,93,100,team_one_players,team_two_players,team_one_players,team_two_players,[0,0,0,0,0],[0,1,2,3],1,1,0,-1,-1,-1)
     })
 })
 
