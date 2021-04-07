@@ -1,3 +1,18 @@
+
+// create_team(team,toi,tti,captain_id,vice_captain_id,codervp_cnt+1,credits)
+class MyVpData
+{
+   constructor(team,toi,tti,captain_id,vice_captain_id,credits){
+      this.team = team
+      this.toi = toi
+      this.tti = tti
+      this.captain_id = captain_id
+      this.vice_captain_id = vice_captain_id
+      this.credits = credits
+
+   }
+}
+
 let all_comb = [[
    //dream11
    [
@@ -67,7 +82,7 @@ let all_vp_list=[
     ['','GK','DEF','MID','ST'],
     ['','PG','SG','SF','PF','CE']
     ]
-let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn,csv,cev,fixed_one,fixed_two,captain_one,captain_two,vice_captain_one,vice_captain_two,selected_tsd,series_index,mode,sport_id,fantasy)
+let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn,csv,cev,fixed_one,fixed_two,captain_one,captain_two,vice_captain_one,vice_captain_two,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
 {
    console.log(fantasy)
    diff_comb=all_comb[sport_id]
@@ -140,9 +155,9 @@ let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn
       console.log(f1_players)
       console.log(f2_players)
       console.log(one_arr_cnt)
-   custom_strategy(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy)
+   custom_strategy(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
 }
-let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy)
+let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
 {
    diff_comb=all_comb[sport_id]
    if(sport_id==0)
@@ -216,7 +231,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
       {
       nt =  Number(document.querySelector('#number_teams').value)
       if(nt<1 || nt>100){raiseError('Numbers of teams should be 1 - 100 range'); return}
-      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy)
+      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
       })
    }
    else if(mode==1)
@@ -230,7 +245,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
       {
       nt =  Number(document.querySelector('#number_teams').value)
       if(nt<1 || nt>5000){raiseError('Numbers of teams should be 1 - 5000 range'); return}
-      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy)
+      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
       })
    }
    else
@@ -300,7 +315,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
          {
          nt =  Number(document.querySelector('#number_teams').value)
          if(nt<1 || nt>3333){raiseError('Numbers of teams should be 1 - 3333 range'); return}
-         team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,selected_strategies,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy)
+         team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,selected_strategies,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
          })
    
       })
@@ -310,7 +325,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
 
   
 }
-let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy)
+let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
 {
    diff_comb=all_comb[sport_id]
    if(sport_id==0)
@@ -343,7 +358,7 @@ let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,str
    })
   // console.log(fp_wk)
   // console.log(strategy)
-   team_generator_helper_two(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,0,sport_id,fantasy)
+   team_generator_helper_two(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,0,sport_id,fantasy,fsp,ssp)
 }
 let validation_one = function(team,toi,tti,sport_id)
 {
@@ -367,6 +382,19 @@ let validation_two = function(team)
       sum+=player.player_credits
    })
    return sum
+}
+let validation_three = function(team,fsp,ssp)
+{
+   if(fsp==-1 && ssp == -1) return true;
+    cnt = 0
+    team.forEach((player)=>
+    {
+       if(player.player_percentage>=fsp)
+        cnt++
+    })
+    
+    if(cnt>=ssp) return true;
+    else return false;
 }
 let get_hash_value = function(team,captain_index,vice_captain_index)
 {
@@ -403,8 +431,12 @@ let is_valid_team_side_count = function(team,tso_value,tst_value,toi,tti)
    else 
       return false
 }
-let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,is_custom,sport_id,fantasy)
+let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,is_custom,sport_id,fantasy,fsp,ssp)
 {
+   if(fsp!=-1 && ssp !=-1)
+   nt = 2*nt
+   console.log(fsp,ssp)
+   my_teams = []
    diff_comb=all_comb[sport_id]
    if(sport_id==0)
       diff_comb=diff_comb[fantasy]
@@ -480,6 +512,12 @@ let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,
          let credits = validation_two(team)
          //console.log('hello5')
         // console.log(credits)
+      //   another_d = validation_three(team,fsp,ssp)
+      //    if(another_d == false){
+      //       dp++;
+      //       continue;
+      //    }
+        //dummy
          let flag_one=validation_one(team,toi,tti,sport_id)
        //  console.log('hello5')
         // console.log(flag_one)
@@ -551,6 +589,11 @@ let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,
             let flag = hashmap.indexOf(hash_value)
          // console.log(hash_value,flag)
          // console.log(hashmap)
+            // another_d = validation_three(team,fsp,ssp)
+            // if(another_d == false){
+            //    dp++;
+            //    continue;
+            // }
             if(flag!=-1) map_cnt++
             if(flag==-1)
             {
@@ -560,6 +603,7 @@ let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,
                custom_team_list.push(vp_temp_obj)
                }
                else{
+               my_teams.push(new MyVpData(team,toi,tti,captain_id,vice_captain_id,credits))
                team_obj = create_team(team,toi,tti,captain_id,vice_captain_id,codervp_cnt+1,credits)
                team_list.push(team_obj)
                }
@@ -603,16 +647,46 @@ let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,
          v_team =final_team_creation([[],c_wk,c_bat,c_al,c_bowl],c_team.captain,c_team.vice_captain,c_team.team_number,c_team.team_credits,0,toi,tti,0,[])
          team_placer.appendChild(v_team)
       })
-   }
+   } 
    else{
+      my_teams_list = []
+   if(fsp!=-1 && ssp !=-1)
+   {
+      vp_dp_cnt = 1
+     
+      my_teams.forEach((data)=>
+      {
+         m_cnt = 0
+         data.team.forEach((player)=>{
+            if(player.player_percentage>=fsp)
+            m_cnt++
+         })
+         if( m_cnt == ssp){
+            my_teams_list.push(create_team(data.team,data.toi,data.tti,data.captain_id,data.vice_captain_id,vp_dp_cnt,data.credits))
+            vp_dp_cnt++
+         }
+      })
+   }
    let attempt_id = Number(localStorage.getItem('WA_start_id'))+1
    localStorage.setItem('WA_start_id',`${attempt_id}`)
-   let attempt = new Attempt(team_list,nt,attempt_id,toi,tti,selected_id)
-   let req_index = create_or_update_match(attempt,mn,toi,tti,series_index,sport_id)
-   gp = document.getElementById('generate_panel')
-   gp.style.display="none"
-   display_teams(mn,req_index,toi,tti,series_index,attempt_id,sport_id)
-   SuccessMsg(`Generated Teams are successfully stored at Match no : ${mn}.`)
+   if(fsp!=-1 && ssp!=-1)
+   {
+      let attempt = new Attempt(my_teams_list,nt,attempt_id,toi,tti,selected_id)
+      let req_index = create_or_update_match(attempt,mn,toi,tti,series_index,sport_id)
+      gp = document.getElementById('generate_panel')
+      gp.style.display="none"
+      display_teams(mn,req_index,toi,tti,series_index,attempt_id,sport_id)
+      SuccessMsg(`Generated Teams are successfully stored at Match no : ${mn}.`)
+   }
+   else{
+      let attempt = new Attempt(team_list,nt,attempt_id,toi,tti,selected_id)
+      let req_index = create_or_update_match(attempt,mn,toi,tti,series_index,sport_id)
+      gp = document.getElementById('generate_panel')
+      gp.style.display="none"
+      display_teams(mn,req_index,toi,tti,series_index,attempt_id,sport_id)
+      SuccessMsg(`Generated Teams are successfully stored at Match no : ${mn}.`)
+   }
+  
    }
 }
 
