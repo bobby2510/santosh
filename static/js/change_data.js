@@ -55,21 +55,33 @@ let change_player_data = function(team_index,series_index)
         inner_div_two = document.createElement('div')
         span_credits = document.createElement('small')
         span_credits.textContent="Credits :"
+        span_percentage = document.createElement('small')
+        span_percentage.textContent="Percentage :"
         input_credits = document.createElement('input')
         input_credits.setAttribute('type','number')
         input_credits.classList.add('input-change-size')
         input_credits.value = player.player_credits
         input_credits.setAttribute('id','pc')
+        inner_div_three = document.createElement('div')
+        input_percentage = document.createElement('input')
+        input_percentage.setAttribute('type','number')
+        input_percentage.classList.add('input-change-size')
+        input_percentage.value = player.player_percentage
+        input_percentage.setAttribute('id','pp')
         inner_div_two.appendChild(span_credits)
         inner_div_two.appendChild(input_credits)
+        inner_div_three.appendChild(span_percentage)
+        inner_div_three.appendChild(input_percentage)
         inner_div_one.classList.add('final_kvp')
         inner_div_two.classList.add('final_kvp')
+        inner_div_three.classList.add('final_kvp')
         outer_div.appendChild(img)
         outer_div.appendChild(h4)
         outer_sub_div = document.createElement('div')
         outer_sub_div.classList.add('d-flex','flex-wrap','justify-content-around','align-items-center','m-2','p-2')
         outer_sub_div.appendChild(inner_div_one)
         outer_sub_div.appendChild(inner_div_two)
+        outer_sub_div.appendChild(inner_div_three)
         outer_div.appendChild(outer_sub_div)
         cpp.appendChild(outer_div)
     })
@@ -79,8 +91,10 @@ let change_player_data = function(team_index,series_index)
     {
         pr_list = document.querySelectorAll('#pr')
         pc_list = document.querySelectorAll('#pc')
+        pp_list = document.querySelectorAll('#pp')
         pr_data=[]
         pc_data=[]
+        pp_data = []
         pr_list.forEach((ele)=>
         {
             pr_data.push(Number(ele.value))
@@ -89,10 +103,15 @@ let change_player_data = function(team_index,series_index)
         {
             pc_data.push(Number(ele.value))
         })
+        pp_list.forEach((ele)=>
+        {
+            pp_data.push(Number(ele.value))
+        })
         teams_data.teams[team_index].players.forEach((player,index)=>
         {
             player.player_role=pr_data[index]
             player.player_credits=pc_data[index]
+            player.player_percentage = pp_data[index]
         })
         sd.req_data[series_index]=teams_data
         localStorage.setItem('series_data',JSON.stringify(sd))
