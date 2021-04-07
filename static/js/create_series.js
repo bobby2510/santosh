@@ -458,7 +458,7 @@ let helper_three = function(sport_id,series_index,team_index)
                 console.log(p_name.length)
                 for(let i=0;i<p_name.length;i++)
                 {
-                    data.req_data[series_index].teams[team_index].players.push(new Player(p_name[i],p_role[i],p_credits[i],0,previous_p_cnt,team_index,cnt))
+                    data.req_data[series_index].teams[team_index].players.push(new Player(p_name[i],p_role[i],p_credits[i],0,previous_p_cnt,team_index,cnt,0))
                     cnt++
                     previous_p_cnt++
                 }
