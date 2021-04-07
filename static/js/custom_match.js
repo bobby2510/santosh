@@ -214,7 +214,7 @@ ctc.addEventListener('click',()=>
             let temp_r = obj.querySelector('#player_role').textContent
             let temp_c = obj.querySelector('#player_credits').textContent
             let temp_n = obj.querySelector('#player_name').textContent
-           team_one_players.push(new Player(temp_n,role_list.indexOf(temp_r),parseFloat(temp_c),0,index,0,player_id))
+           team_one_players.push(new Player(temp_n,role_list.indexOf(temp_r),parseFloat(temp_c),0,index,0,player_id,0))
            if(temp_r =='WK') wk_cnt++
            else if(temp_r=='BAT') bat_cnt++
            else if(temp_r == 'BOWL') bowl_cnt++
@@ -226,7 +226,7 @@ ctc.addEventListener('click',()=>
         let temp_r = obj.querySelector('#player_role').textContent
         let temp_c = obj.querySelector('#player_credits').textContent
         let temp_n = obj.querySelector('#player_name').textContent
-       team_two_players.push(new Player(temp_n,role_list.indexOf(temp_r),parseFloat(temp_c),0,index,1,player_id))
+       team_two_players.push(new Player(temp_n,role_list.indexOf(temp_r),parseFloat(temp_c),0,index,1,player_id,0))
        if(temp_r =='WK') wk_cnt++
        else if(temp_r=='BAT') bat_cnt++
        else if(temp_r == 'BOWL') bowl_cnt++
@@ -278,7 +278,7 @@ ctc.addEventListener('click',()=>
     nt =  Number(document.querySelector('#number_teams').value)
     if(nt<1 || nt>2000){raiseError('Numbers of teams should be 1 - 2000 range'); return}
 
-    team_generator_helper_two([[],wk,bat,al,bowl],[[],[],[],[],[]],req_comb,0,1,nt,1,93,100,team_one_players,team_two_players,team_one_players,team_two_players,[0,0,0,0,0],[0,1,2,3],1,1,0)
+    team_generator_helper_two([[],wk,bat,al,bowl],[[],[],[],[],[]],req_comb,0,1,nt,1,93,100,team_one_players,team_two_players,team_one_players,team_two_players,[0,0,0,0,0],[0,1,2,3],1,1,0,-1,-1)
     })
 })
 
