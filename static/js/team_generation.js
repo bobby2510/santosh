@@ -82,7 +82,7 @@ let all_vp_list=[
     ['','GK','DEF','MID','ST'],
     ['','PG','SG','SF','PF','CE']
     ]
-let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn,csv,cev,fixed_one,fixed_two,captain_one,captain_two,vice_captain_one,vice_captain_two,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
+let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn,csv,cev,fixed_one,fixed_two,captain_one,captain_two,vice_captain_one,vice_captain_two,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp,tsp)
 {
    console.log(fantasy)
    diff_comb=all_comb[sport_id]
@@ -155,9 +155,9 @@ let team_generator = function(team_one,team_two,team_one_index,team_two_index,mn
       console.log(f1_players)
       console.log(f2_players)
       console.log(one_arr_cnt)
-   custom_strategy(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
+   custom_strategy(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp,tsp)
 }
-let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp)
+let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,team_one_index,team_two_index,mn,csv,cev,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,selected_tsd,series_index,mode,sport_id,fantasy,fsp,ssp,tsp)
 {
    diff_comb=all_comb[sport_id]
    if(sport_id==0)
@@ -231,7 +231,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
       {
       nt =  Number(document.querySelector('#number_teams').value)
       if(nt<1 || nt>100){raiseError('Numbers of teams should be 1 - 100 range'); return}
-      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
+      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp,tsp)
       })
    }
    else if(mode==1)
@@ -245,7 +245,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
       {
       nt =  Number(document.querySelector('#number_teams').value)
       if(nt<1 || nt>5000){raiseError('Numbers of teams should be 1 - 5000 range'); return}
-      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
+      team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,c_strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp,tsp)
       })
    }
    else
@@ -315,7 +315,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
          {
          nt =  Number(document.querySelector('#number_teams').value)
          if(nt<1 || nt>3333){raiseError('Numbers of teams should be 1 - 3333 range'); return}
-         team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,selected_strategies,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
+         team_generator_helper_one(selected_team_one,selected_team_two,team_one_index,team_two_index,nt,mn,csv,cev,selected_strategies,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp,tsp)
          })
    
       })
@@ -325,7 +325,7 @@ let custom_strategy = function(one_arr_cnt,selected_team_one,selected_team_two,t
 
   
 }
-let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp)
+let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,strategy,f1_players,f2_players,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,sport_id,fantasy,fsp,ssp,tsp)
 {
    diff_comb=all_comb[sport_id]
    if(sport_id==0)
@@ -358,7 +358,7 @@ let team_generator_helper_one = function(st_one,st_two,toi,tti,nt,mn,csv,cev,str
    })
   // console.log(fp_wk)
   // console.log(strategy)
-   team_generator_helper_two(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,0,sport_id,fantasy,fsp,ssp)
+   team_generator_helper_two(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,0,sport_id,fantasy,fsp,ssp,tsp)
 }
 let validation_one = function(team,toi,tti,sport_id)
 {
@@ -431,7 +431,7 @@ let is_valid_team_side_count = function(team,tso_value,tst_value,toi,tti)
    else 
       return false
 }
-let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,is_custom,sport_id,fantasy,fsp,ssp)
+let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,mn,csv,cev,c1_players,c2_players,vc1_players,vc2_players,f_one_arr_cnt,selected_tsd,series_index,is_custom,sport_id,fantasy,fsp,ssp,tsp)
 {
    if(fsp!=-1 && ssp !=-1)
    nt = 2*nt
@@ -661,7 +661,7 @@ let team_generator_helper_two = function(one_arr,fp_one_arr,strategy,toi,tti,nt,
             if(player.player_percentage>=fsp)
             m_cnt++
          })
-         if( m_cnt == ssp){
+         if( m_cnt >= ssp && m_cnt <=tsp){
             my_teams_list.push(create_team(data.team,data.toi,data.tti,data.captain_id,data.vice_captain_id,vp_dp_cnt,data.credits))
             vp_dp_cnt++
          }
