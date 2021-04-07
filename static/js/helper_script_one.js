@@ -256,107 +256,127 @@ submit_players.addEventListener('click',()=>
                     if(vice_captain_cnt<1){raiseError('Atleast select one player'); return}
                     vcp = document.getElementById('vice_captain_panel')
                     vcp.style.display="none"
-                    ts = document.getElementById('team_side')
-                    ts.style.display="block"
-                    tsp = document.querySelector('#team_side_placer')
-                    let all_vp_list=[
-                        [[4,7],[5,6],[6,5],[7,4]],
-                        [[4,7],[5,6],[6,5],[7,4]],
-                        [[3,5],[4,4],[5,3]]
-                    ]
-                    let vp_list=all_vp_list[sport_id]
-                    vp_one_cnt=fixed_team_one_players.length
-                    vp_two_cnt=fixed_team_two_players.length
-                    let eligible_list=[]
-                    vp_list.forEach((data,index)=>
+
+                    selection_percentage = document.querySelector('#selection_percentage')
+                    console.log(selection_percentage)
+                    selection_percentage.style.display="block"
+                    spc = document.querySelector('#selection_percentage_continue')
+                    spc.addEventListener('click',()=>
                     {
-                        if(data[0]>=vp_one_cnt && data[1]>=vp_two_cnt)
+                        fsp = document.querySelector('#first_selection_percentage')
+                        ssp = document.querySelector('#second_selection_percentage')
+                        first_value = Number(fsp.value)
+                        second_value = Number(ssp.value)
+                        console.log(first_value,second_value)
+                        if(first_value <0 || first_value > 100){raiseError('Invalid Input!'); return}
+                        if(second_value<1 || second_value>11) {raiseError('Invalid Input!'); return}
+                        selection_percentage.style.display="none"
+                        ts = document.getElementById('team_side')
+                        ts.style.display="block"
+                        tsp = document.querySelector('#team_side_placer')
+                        let all_vp_list=[
+                            [[4,7],[5,6],[6,5],[7,4]],
+                            [[4,7],[5,6],[6,5],[7,4]],
+                            [[3,5],[4,4],[5,3]]
+                        ]
+                        let vp_list=all_vp_list[sport_id]
+                        vp_one_cnt=fixed_team_one_players.length
+                        vp_two_cnt=fixed_team_two_players.length
+                        let eligible_list=[]
+                        vp_list.forEach((data,index)=>
                         {
-                            eligible_list.push(index)
-                        }
-                    })
-                    eligible_list.forEach((index)=>
-                    {
-                        main_table = document.createElement('table')
-                        main_table.classList.add('mystrat','border-grey')
-                        main_table.setAttribute('id','team_side_data')
-                        td_one_one=document.createElement('td')
-                        td_one_one.textContent='Team -1 : '
-                        b_one=document.createElement('b')
-                        b_two=document.createElement('b')
-                        b_one.textContent=`${vp_list[index][0]}`
-                        b_two.textContent=`${vp_list[index][1]}`
-                        td_one_two=document.createElement('td')
-                        td_one_two.appendChild(b_one)
-                        td_two_one=document.createElement('td')
-                        td_two_one.textContent='Team -2 : '
-                        td_two_two=document.createElement('td')
-                        td_two_two.appendChild(b_two)
-                        span_index=document.createElement('span')
-                        span_index.style.display="none"
-                        span_index.textContent=index
-                        span_index.setAttribute('id','span_index')
-                        tr_one=document.createElement('tr')
-                        tr_two=document.createElement('tr')
-                        tr_one.appendChild(td_one_one)
-                        tr_one.appendChild(td_one_two)
-                        tr_two.appendChild(td_two_one)
-                        tr_two.appendChild(td_two_two)
-                        main_table.appendChild(tr_one)
-                        main_table.appendChild(tr_two)
-                        main_table.appendChild(span_index)
-                        tsp.appendChild(main_table)
-                    })
-                    tsd=document.querySelectorAll('#team_side_data')
-                    tsd.forEach((element)=>
-                    {
-                        element.addEventListener('click',()=>
-                        {
-                            if(Array.from(element.classList).includes('border-grey'))
+                            if(data[0]>=vp_one_cnt && data[1]>=vp_two_cnt)
                             {
-                                element.classList.remove('border-grey')
-                                element.classList.add('border-lime')
-                            }
-                            else{
-                                element.classList.remove('border-lime')
-                                element.classList.add('border-grey')
+                                eligible_list.push(index)
                             }
                         })
-                    })
-                    tol = document.querySelector('#team_one_label')
-                    ttl = document.querySelector('#team_two_label')
-                    tol.textContent=`Team one ${team_list[team1]}`
-                    ttl.textContent=`Team two ${team_list[team2]}`
-                    tsc=document.getElementById('team_side_continue')
-                    //console.log(tso_value,tst_value)
-                    tsc.addEventListener('click',()=>
-                    {
-                        selected_tsd=[]
-                        tsd.forEach((element,index)=>
+                        eligible_list.forEach((index)=>
                         {
-                            if(Array.from(element.classList).includes('border-lime')){
-                                selected_tsd.push(Number(element.querySelector('#span_index').textContent))
+                            main_table = document.createElement('table')
+                            main_table.classList.add('mystrat','border-grey')
+                            main_table.setAttribute('id','team_side_data')
+                            td_one_one=document.createElement('td')
+                            td_one_one.textContent='Team -1 : '
+                            b_one=document.createElement('b')
+                            b_two=document.createElement('b')
+                            b_one.textContent=`${vp_list[index][0]}`
+                            b_two.textContent=`${vp_list[index][1]}`
+                            td_one_two=document.createElement('td')
+                            td_one_two.appendChild(b_one)
+                            td_two_one=document.createElement('td')
+                            td_two_one.textContent='Team -2 : '
+                            td_two_two=document.createElement('td')
+                            td_two_two.appendChild(b_two)
+                            span_index=document.createElement('span')
+                            span_index.style.display="none"
+                            span_index.textContent=index
+                            span_index.setAttribute('id','span_index')
+                            tr_one=document.createElement('tr')
+                            tr_two=document.createElement('tr')
+                            tr_one.appendChild(td_one_one)
+                            tr_one.appendChild(td_one_two)
+                            tr_two.appendChild(td_two_one)
+                            tr_two.appendChild(td_two_two)
+                            main_table.appendChild(tr_one)
+                            main_table.appendChild(tr_two)
+                            main_table.appendChild(span_index)
+                            tsp.appendChild(main_table)
+                        })
+                        tsd=document.querySelectorAll('#team_side_data')
+                        tsd.forEach((element)=>
+                        {
+                            element.addEventListener('click',()=>
+                            {
+                                if(Array.from(element.classList).includes('border-grey'))
+                                {
+                                    element.classList.remove('border-grey')
+                                    element.classList.add('border-lime')
+                                }
+                                else{
+                                    element.classList.remove('border-lime')
+                                    element.classList.add('border-grey')
+                                }
+                            })
+                        })
+                        tol = document.querySelector('#team_one_label')
+                        ttl = document.querySelector('#team_two_label')
+                        tol.textContent=`Team one ${team_list[team1]}`
+                        ttl.textContent=`Team two ${team_list[team2]}`
+                        tsc=document.getElementById('team_side_continue')
+                        //console.log(tso_value,tst_value)
+                        tsc.addEventListener('click',()=>
+                        {
+                            selected_tsd=[]
+                            tsd.forEach((element,index)=>
+                            {
+                                if(Array.from(element.classList).includes('border-lime')){
+                                    selected_tsd.push(Number(element.querySelector('#span_index').textContent))
+                                }
+                            })
+                            if(selected_tsd.length<1)
+                            {
+                                raiseError('Select Atleast one!')
+                                return;
                             }
+                            ts.style.display="none"
+                            cr = document.getElementById('credit_range')
+                            cr.style.display="block"
+                            crc =document.getElementById('credit_range_continue')
+                            crc.addEventListener('click',()=>
+                            {
+                                csv=document.getElementById('credit_start_value').value
+                                cev=document.getElementById('credit_end_value').value
+                                if(csv=='' || cev=='' || Number(cev)-Number(csv)<0 || Number(cev)>100) {raiseError('Invalid Credit Range');return}
+                                cr.style.display="none"
+                                console.log(selected_tsd)
+                                console.log(first_value,second_value)
+                                team_generator(index_one,index_two,team1,team2,mn,csv,cev,fixed_team_one_players,fixed_team_two_players,captain_team_one_players,captain_team_two_players,vice_captain_team_one_players,vice_captain_team_two_players,selected_tsd,series_index,mode,sport_id,fantasy,first_value,second_value)
+                            })
                         })
-                        if(selected_tsd.length<1)
-                        {
-                            raiseError('Select Atleast one!')
-                            return;
-                        }
-                        ts.style.display="none"
-                        cr = document.getElementById('credit_range')
-                        cr.style.display="block"
-                        crc =document.getElementById('credit_range_continue')
-                        crc.addEventListener('click',()=>
-                        {
-                            csv=document.getElementById('credit_start_value').value
-                            cev=document.getElementById('credit_end_value').value
-                            if(csv=='' || cev=='' || Number(cev)-Number(csv)<0 || Number(cev)>100) {raiseError('Invalid Credit Range');return}
-                            cr.style.display="none"
-                            console.log(selected_tsd)
-                            team_generator(index_one,index_two,team1,team2,mn,csv,cev,fixed_team_one_players,fixed_team_two_players,captain_team_one_players,captain_team_two_players,vice_captain_team_one_players,vice_captain_team_two_players,selected_tsd,series_index,mode,sport_id,fantasy)
                         })
-                    })
+
+
+                    
                 })
     
             })
