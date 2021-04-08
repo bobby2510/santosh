@@ -1,65 +1,6 @@
 json_data={
   "req_data" :[
-      {
-        "series_name": "CSA T20 LEAGUE", 
-        "series_code": "CSA",
-         "number_teams": 6,
-         "team_list": ["TIT", "KTS","WAR","HL","DOL","CC"], 
-         "teams":
-          [
-              {
-                  "team_name": "TIT",
-                   "players_name": ["H Klaasen", "H Davids", "S Makhanya", "A Markram", "T Bruyn", "D Elgar", "D Galiem", "L Williams", "G Thomson", "C Morris", "O Cele", "G Mahlokwana", "J Dala", "L Ngidi", "T Shamsi", "S Harmer"],
-                    "players_role": [1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4],
-                    "players_percentage": [1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4],
-                    "players_credits": [9.5, 8.5, 8.0, 8.5, 9.0, 9.0, 8.0, 8.5, 8.5, 10.0, 8.0, 8.0, 8.5, 9.0, 9.0, 8.5], 
-                    "players_image": [2800, 0, 0, 2803, 2804, 2805, 0, 0, 0, 2809, 0, 0, 2812, 2813, 2814, 2815], 
-                    "players_id": [2800, 2801, 2802, 2803, 2804, 2805, 2806, 2807, 2808, 2809, 2810, 2811, 2812, 2813, 2814, 2815]
-                }, 
-                    
-                {
-                    "team_name": "KTS", 
-                    "players_name": ["A Gous", "W Makwetu", "M Kleinveldt", "R Tonder", "G Mokoena", "P Biljon", "J Vandiar", "J Snyman", "F Adams", "P Kruger", "F Behardien", "M Budaza", "M Pretorius", "G Coetzee", "A Mothoa", "S Berg"], 
-                    "players_role": [1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4], 
-                    "players_percentage": [1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4], 
-                    "players_credits": [8.5, 8.0, 8.0, 9.5, 8.0, 8.5, 8.5, 8.5, 9.0, 9.0, 9.5, 8.0, 8.5, 8.5, 8.5, 9.0], 
-                    "players_image": [0, 0, 0, 2819, 0, 0, 0, 0, 0, 0, 2826, 0, 0, 0, 0, 0],
-                     "players_id": [2816, 2817, 2818, 2819, 2820, 2821, 2822, 2823, 2824, 2825, 2826, 2827, 2828, 2829, 2830, 2831]
-                },
-                {
-                    "team_name": "WAR", 
-                    "players_name": ["S Qeshile", "T Stubbs", "G Cloete", "L Ngoepe", "M Marais", "W Lubbe", "J Klerk", "A Gqamane", "JJ Smuts", "S Tait", "M Jansen", "G Stuurman", "L Makhosi", "M Nabe", "A Nortje", "T Ntuli"],
-                     "players_role": [1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4], 
-                     "players_percentage": [1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4], 
-                     "players_credits": [8.5, 8.0, 9.0, 8.0, 9.5, 9.0, 8.0, 8.5, 10.0, 8.0, 8.5, 8.5, 8.0, 8.5, 9.5, 8.0],
-                      "players_image": [0, 0, 2902, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2914, 0], 
-                      "players_id": [2900, 2901, 2902, 2903, 2904, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915]
-                    }, 
-                    {"team_name": "HL",
-                     "players_name": ["R Rickelton", "R Haasbroek", "R Hendricks", "T Bavuma", "R der-Dussen", "W Mulder", "D Potgieter", "D Pretorius", "L Sipamla", "E Hawken", "B Fortuin", "S Magala", "K Rabada", "M Siboto", "B Hendricks", "A Phangiso"],
-                      "players_role": [1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4], 
-                      "players_percentage": [1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4], 
-                      "players_credits": [8.5, 8.0, 9.5, 9.0, 10.0, 9.0, 8.5, 8.5, 8.0, 8.0, 8.5, 8.5, 9.5, 8.0, 8.5, 8.5], 
-                      "players_image": [0, 0, 2918, 2919, 2920, 0, 0, 2923, 0, 0, 0, 0, 2928, 0, 2930, 2931], 
-                      "players_id": [2916, 2917, 2918, 2919, 2920, 2921, 2922, 2923, 2924, 2925, 2926, 2927, 2928, 2929, 2930, 2931]
-                    },
-                    {"team_name": "DOL",
-                     "players_name": ["G Roelofsen", "M Mosehle", "K Zondo", "K Petersen", "S Erwee", "D Miller", "R Frylinck", "RD Swardt", "S Muthusamy", "A Phehlukwayo", "P Subrayen", "D Dupavillon", "E Bosch", "O Baartman", "K Mungroo", "K Maharaj"], 
-                     "players_role": [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],
-                     "players_percentage": [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],
-                      "players_credits": [8.5, 8.5, 9.0, 8.5, 9.0, 10.0, 8.5, 9.0, 9.0, 9.5, 8.0, 8.5, 8.5, 8.0, 8.5, 9.0],
-                       "players_image": [0, 0, 0, 0, 0, 2855, 0, 0, 0, 2859, 0, 0, 0, 0, 0, 2865], 
-                       "players_id": [2850, 2851, 2852, 2853, 2854, 2855, 2856, 2857, 2858, 2859, 2860, 2861, 2862, 2863, 2864, 2865]}, 
-                       {"team_name": "CC",
-                         "players_name": ["K Verreynne", "H Hanabe", "C Jonker", "J Malan", "Z Hamza", "T Zorzi", "C Savage", "O Nyaku", "G Linde", "J Smith", "Z Abrahams", "T Moreki", "N Burger", "I Manack", "C Bosch", "S Mahima"], 
-                         "players_role": [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4], 
-                         "players_percentage": [1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4], 
-                         "players_credits": [9.5, 8.0, 8.5, 10.0, 9.0, 9.0, 9.0, 9.0, 9.5, 8.5, 8.0, 8.5, 8.5, 8.5, 8.0, 8.0], 
-                         "players_image": [0, 0, 0, 0, 0, 0, 0, 0, 0, 2875, 0, 0, 0, 0, 0, 0], 
-                         "players_id": [2866, 2867, 2868, 2869, 2870, 2871, 2872, 2873, 2874, 2875, 2876, 2877, 2878, 2879, 2880, 2881]
-                        }
-         ]
-    },
+    
     {
       "series_name": "Pakistan Super League",
        "series_code": "PSL",
@@ -220,7 +161,85 @@ json_data={
        "players_percentage": [1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4], 
        "players_credits": [9.5, 9.0, 8.0, 8.5, 8.5, 9.0, 9.0, 8.5, 8.0, 9.0, 8.0, 8.5, 8.5, 8.0, 8.5, 8.0, 8.0, 8.5, 9.0], 
        "players_image": [6813, 6814, 6815, 0, 6817, 6818, 6819, 6820, 6821, 6822, 6823, 6824, 6825, 0, 6827, 6828, 6829, 6830, 6831], 
-       "players_id": [6813, 6814, 6815, 6816, 6817, 6818, 6819, 6820, 6821, 6822, 6823, 6824, 6825, 6826, 6827, 6828, 6829, 6830, 6831]}]}
+       "players_id": [6813, 6814, 6815, 6816, 6817, 6818, 6819, 6820, 6821, 6822, 6823, 6824, 6825, 6826, 6827, 6828, 6829, 6830, 6831]}]},
+    {
+    "series_name": "IPL 2021 LEAGUE",
+     "series_code": "IPL2021",
+      "number_teams": 8,
+       "team_list": ["RCB2021", "MI2021","KKR2021","SRH2021","CSK2021","PK2021","RR2021","DC2021"],
+        "teams": [
+            {
+                "team_name": "RCB2021",
+                 "players_name": ["M Azharuddeen", "K Srikar-Bharat", "AB Villiers", "P Deshpande", "S Baby", "S Prabhudessai", "D Padikkal", "F Allen", "R Patidar", "V Kohli", "W Sundar", "S Ahmed", "D Sams", "G Maxwell", "D Christian", "K Jamieson", "M Siraj", "N Saini", "A Zampa", "H Patel", "K Richardson", "Y Chahal"],
+                  "players_role": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4], 
+                  "players_percentage": [1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4], 
+                  "players_credits": [8.0, 8.0, 10.0, 8.0, 8.0, 8.0, 9.0, 8.0, 8.0, 10.5, 8.5, 7.5, 8.0, 9.0, 8.5, 8.5, 8.5, 8.0, 8.5, 8.0, 8.5, 9.0], 
+                  "players_image": [9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032, 9033, 9034, 9035, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 9043, 9044, 9045, 9046], 
+                  "players_id": [9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032, 9033, 9034, 9035, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 9043, 9044, 9045, 9046]
+                  },
+                  {
+                    "team_name": "MI2021",
+                    "players_name": ["Q Kock", "I Kishan", "A Tare", "S Tiwary", "R Sharma", "S Yadav", "C Lynn", "A Singh", "K Pollard", "K Pandya", "H Pandya", "A Roy", "J Neesham", "A Tendulkar", "M Jansen", "R Chahar", "M Khan", "Y Singh", "J Yadav", "J Bumrah", "N Coulter-Nile", "T Boult", "A Milne", "D Kulkarni", "P Chawla"], 
+                   "players_role": [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                   "players_percentage": [1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                    "players_credits": [9.5, 8.5, 8.0, 8.0, 10.0, 9.0, 8.5, 8.0, 9.0, 8.0, 9.0, 8.0, 8.5, 7.5, 8.0, 8.5, 8.0, 8.0, 8.0, 9.0, 8.0, 9.0, 8.0, 8.0, 8.0],
+                     "players_image": [9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 0, 9018, 9019, 9020, 9021, 9022, 9023, 9024], 
+                     "players_id": [9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024]
+                   },
+          {"team_name": "KKR2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                },
+          {"team_name": "SRH2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                },
+          {"team_name": "CSK2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                },
+          {"team_name": "PK2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                },
+          {"team_name": "RR2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                },
+          {"team_name": "DC2021",
+               "players_name":[],
+                "players_role": [], 
+                "players_percentage": [], 
+                "players_credits": [], 
+                "players_image": [], 
+                "players_id": []
+                }
+        ]
+}
+
+
+
+
     
     ]
 }
