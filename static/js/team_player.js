@@ -164,7 +164,7 @@ json_data={
        "players_id": [6813, 6814, 6815, 6816, 6817, 6818, 6819, 6820, 6821, 6822, 6823, 6824, 6825, 6826, 6827, 6828, 6829, 6830, 6831]}]},
     {
     "series_name": "IPL 2021 LEAGUE",
-     "series_code": "IPL21",
+     "series_code": "2021IPL",
       "number_teams": 8,
        "team_list": ["RCB2021", "MI2021","KKR2021","SRH2021","CSK2021","PK2021","RR2021","DC2021"],
         "teams": [
@@ -186,22 +186,23 @@ json_data={
                      "players_image": [9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 0, 9018, 9019, 9020, 9021, 9022, 9023, 9024], 
                      "players_id": [9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024]
                    },
-          {"team_name": "KKR2021",
-               "players_name":[],
-                "players_role": [], 
-                "players_percentage": [], 
-                "players_credits": [], 
-                "players_image": [], 
-                "players_id": []
-                },
+         {
+                         "team_name": "KKR2021",
+                          "players_name": ["S Jackson", "E Morgan", "K Nair", "N Rana", "R Tripathi", "S Gill", "A Russell", "B Cutting", "S Al Hasan", "S Narine", "V Iyer", "D Karthik", "G Singh Mann", "T Seifert", "H Singh", "K Nagarkoti", "K Yadav", "L Ferguson", "P Cummins", "P Negi", "P Krishna", "S Warrier", "S Mavi", "V Arora", "V Chakaravarthy"], 
+                          "players_role": [1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 1, 2, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+           "players_percentage": [1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 1, 2, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                           "players_credits": [8,9.5,8,8.5,8,9,10,8.5,9,9,8,8.5,8,8,8,8,8.5,8.5,9,8,8.5,8,8,7.5,8.5], 
+                           "players_image": [9150, 9151, 9152, 9153, 9154, 9155, 9156, 9157, 9158, 9159, 9160, 9161, 9162, 9163, 9164, 9165, 9166, 9167, 9168, 9169, 9170, 9171, 9172, 9173, 9174],
+                            "players_id": [9150, 9151, 9152, 9153, 9154, 9155, 9156, 9157, 9158, 9159, 9160, 9161, 9162, 9163, 9164, 9165, 9166, 9167, 9168, 9169, 9170, 9171, 9172, 9173, 9174]
+                            },
           {"team_name": "SRH2021",
-               "players_name":[],
-                "players_role": [], 
-                "players_percentage": [], 
-                "players_credits": [], 
-                "players_image": [], 
-                "players_id": []
-                },
+                "players_name": ["J Bairstow", "A Samad", "J Roy", "K Williamson", "M Pandey", "P Garg", "V Singh", "A Sharma", "J Holder", "K Jadhav", "M Nabi", "V Shankar", "D Warner", "S Goswami", "W Saha", "B Thampi", "B Kumar", "J Suchith", "K Ahmed", "M Ur Rahman", "R Khan", "S Sharma", "S Nadeem", "S Kaul", "T Natarajan"],
+                 "players_role": [1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], 
+            "players_percentage": [1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 2, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], 
+                 "players_credits": [9,8,9,9,9,8,8,8,9,8,8.5,8.5,10.5,7.5,8.5,8,9,8,8,8.5,9.5,8.5,8,8,8.5],
+                  "players_image": [9100, 9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110, 9111, 9112, 9113, 9114, 9115, 9116, 9117, 9118, 9119, 9120, 9121, 9122, 9123, 9124],
+                   "players_id": [9100, 9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110, 9111, 9112, 9113, 9114, 9115, 9116, 9117, 9118, 9119, 9120, 9121, 9122, 9123, 9124]
+                   },
           {"team_name": "CSK2021",
                "players_name":["N Jagadeesan","M Dhoni","C Pujara","C H Nishanth","R Uthappa","R Gaikwad","A Rajudu","S Raina","F d Plessis","B Varma","M Santner","K Gowtham","M Ali","R Jadeja","S Curran","K Sharama","J Behrendorff","R S Kishore","K Asif","H Reddy","D Bravo","I Tahir","D Chahar","S Thakur","L Ngidi"],
                 "players_role": [1,1,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4], 
